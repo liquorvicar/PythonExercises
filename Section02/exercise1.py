@@ -1,12 +1,14 @@
 from string import Template
 
+FT_TO_METRES = 0.09290304
+
 values = {
     'length': int(input('Length in feet: ')),
     'width': int(input('Width in feet: '))
 }
 
 values['area_in_feet'] = values['length'] * values['width']
-values['area_in_metres'] = round(values['area_in_feet'] * 0.09290304, 3)
+values['area_in_metres'] = round(values['area_in_feet'] * FT_TO_METRES, 3)
 
 output = Template("You entered dimensions of $width feet by $length feet\n"
                   "The area is\n"
